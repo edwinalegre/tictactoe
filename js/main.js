@@ -92,5 +92,17 @@ $scope.onclick = function(){
             $scope.score('O');
         };
 
+        // Tie game
+        if ( $scope.boxes[0].box != '' && $scope.boxes[1].box != '' && $scope.boxes[2].box != '' &&
+             $scope.boxes[3].box != '' && $scope.boxes[4].box != '' && $scope.boxes[5].box != '' &&
+             $scope.boxes[6].box != '' && $scope.boxes[7].box != '' && $scope.boxes[8].box != '' && game != 'stop'){
+            
+            $scope.startButton = 'Play Again';
+            $scope.status = 'TIE!!!';
+            p1scoreTie++;
+            $scope.p1scoreTie = p1scoreTie;
+            game = 'stop';
+            turn == 'X' ? turn = 'O' : turn = 'X';
+        };
     };
 };
