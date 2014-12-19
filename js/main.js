@@ -1,21 +1,20 @@
-var turn = 'O';
-var game = '';
-$scope.startButton = 'Start';
+ // Sets initial variables
+    var turn = 'O';
+    var game = '';
+    var p1scoreWin = 0;
+    var p1scoreLose = 0;
+    var p1scoreTie = 0;
+    $scope.startButton = 'Start';
 
-$scope.start = function(){
-    $scope.boxes = [
-            {box: ''},{box: ''},{box: ''},
-            {box: ''},{box: ''},{box: ''},
-            {box: ''},{box: ''},{box: ''}
-        ]; 
-    if(turn == 'X'){
-        turn = 'O';
-        $scope.status = 'Player O Starts';
-    }else{
-        turn = 'X';
-        $scope.status = 'Player X Starts';
+    // Start and Restart game
+    $scope.start = function(){
+        game = '';
+        $scope.boxes = [
+                {box: ''},{box: ''},{box: ''},
+                {box: ''},{box: ''},{box: ''},
+                {box: ''},{box: ''},{box: ''}
+            ]; 
     };
-};
 
 $scope.onclick = function(){
 if(this.row.box == '' && game == ''){
@@ -42,4 +41,30 @@ if(this.row.box == '' && game == ''){
         turn = i;
     };
 
+};
+
+// Game comparison of X's and O's on the board to determine the winner and losers
+if ( $scope.boxes[0].box == 'X' && $scope.boxes[1].box == 'X' && $scope.boxes[2].box == 'X' ){
+    $scope.score('X');
+};
+if ( $scope.boxes[3].box == 'X' && $scope.boxes[4].box == 'X' && $scope.boxes[5].box == 'X' ){
+    $scope.score('X');
+};
+if ( $scope.boxes[6].box == 'X' && $scope.boxes[7].box == 'X' && $scope.boxes[8].box == 'X' ){
+    $scope.score('X');
+};
+if ( $scope.boxes[0].box == 'X' && $scope.boxes[3].box == 'X' && $scope.boxes[6].box == 'X' ){
+    $scope.score('X');
+};
+if ( $scope.boxes[1].box == 'X' && $scope.boxes[4].box == 'X' && $scope.boxes[7].box == 'X' ){
+    $scope.score('X');
+};
+if ( $scope.boxes[2].box == 'X' && $scope.boxes[5].box == 'X' && $scope.boxes[8].box == 'X' ){
+    $scope.score('X');
+};
+if ( $scope.boxes[0].box == 'X' && $scope.boxes[4].box == 'X' && $scope.boxes[8].box == 'X' ){
+    $scope.score('X');
+};
+if ( $scope.boxes[2].box == 'X' && $scope.boxes[4].box == 'X' && $scope.boxes[6].box == 'X' ){
+    $scope.score('X');
 };
