@@ -6,35 +6,38 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/styles.css">
         <script src="js/angular.min.js"></script>
+		<script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
+    	<script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
         <script src="js/main.js"></script>
+		<script src="js/TicController.js"></script>
     </head>
     <body ng-app="ticApp">
-        <div class="container" ng-controller="TicController">
+        <div class="container" ng-controller="TicController as tic">
 
         <header>
             <h1>TIC TAC TOE</h1>
         </header>
 
-        <nav class="status" x-ng-bind="status">
+        <nav class="tic.status" x-ng-bind="tic.status">
         </nav>
 
         <section>
-            <div class="game-board" x-ng-repeat="row in boxes">
-                <div class="theBox" x-ng-class="row.box" x-ng-bind="row.box" x-ng-repeat="box in row" data-ng-click="onclick()"></div>
+            <div class="game-board" x-ng-repeat="list in tic.boxes">
+                <div class="theBox" x-ng-class="list.box" x-ng-bind="list.box" x-ng-repeat="box in list" data-ng-click="tic.onclick($parent.$index)"></div>
             </div>
         </section>
 
         <aside>
-            <button data-ng-click="start()" ng-bind="startButton">Start</button>
+            <button data-ng-click="tic.start()" ng-bind="tic.startButton">Start</button>
 
-                <p>WINS: <span ng-bind="p1scoreWin"></span>
-                   LOSES: <span ng-bind="p1scoreLose"></span>
-                   TIE: <span ng-bind="p1scoreTie"></span>
+                <p>WINS: <span ng-bind="tic.p1scoreWin"></span>
+                   LOSES: <span ng-bind="tic.p1scoreLose"></span>
+                   TIE: <span ng-bind="tic.p1scoreTie"></span>
                 </p>
 
-                <p>WINS: <span ng-bind="p1scoreLose"></span>
-                   LOSES: <span ng-bind="p1scoreWin"></span>
-                   TIE: <span ng-bind="p1scoreTie"></span><p>
+                <p>WINS: <span ng-bind="tic.p1scoreLose"></span>
+                   LOSES: <span ng-bind="tic.p1scoreWin"></span>
+                   TIE: <span ng-bind="tic.p1scoreTie"></span><p>
         </aside>
 
         <footer>
