@@ -1,0 +1,85 @@
+body {
+	color: #000;
+	background-size: cover;
+}
+
+.container {
+	width: 800px;
+	margin: 25px auto;
+}
+
+header, nav, aside, section, footer {
+	border: 5px double #CCC;
+	background-color: #FFF;
+	background-size: cover;
+	margin: 5px;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+header {
+	height: 120px;
+	text-align: center;
+	font-size: 36px;
+	color: #2E709F;
+	line-height: 0px;
+}
+
+nav {
+	width: auto;
+	height: 50px;
+	text-align: center;
+	padding: 5px;
+	font-size: 14px;
+	margin: 5px 5px 0px 5px;
+}
+
+aside {
+	width: 260px;
+	height: 510px;
+	float: left;
+	padding: 10px;
+}
+
+section {
+	width: 520px;
+	float: right;
+	padding: 20px;
+}
+
+footer {
+	height: 50px;
+	padding: 5px;
+	vertical-align: middle;
+	clear: both;
+	text-align: center;
+	font-size: 11px;
+}
+.game-board {
+	width: 450px;
+	margin: 0px auto;
+}
+.theBox {
+	border: 1px solid #000;
+	width: 150px;
+	height: 150px;
+	font-size: 125px;
+	text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+	font-family: arial;
+	text-align: center;
+	color: #999;
+	float: left;
+	box-sizing: border-box;
+}
+.win {
+	height: 25px;
+	font-size: 25px;
+	text-align: center;
+	margin: 0px auto;
+	padding-bottom: 10px;
+}
+.status {
+	text-align: center;
+	font-size: 20px;
+	color: #000;
+}
