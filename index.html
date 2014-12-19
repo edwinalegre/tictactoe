@@ -32,14 +32,16 @@
         </section>
 
         <aside>
-            <button>Start</button>
+            <button data-ng-click="start()" ng-bind="startButton">Start</button>
 
-                <p>
-                	WINS: 
-                	LOSES: 
-                	TIE: 
+                <p>WINS: <span ng-bind="p1scoreWin"></span>
+                   LOSES: <span ng-bind="p1scoreLose"></span>
+                   TIE: <span ng-bind="p1scoreTie"></span>
                 </p>
 
+                <p>WINS: <span ng-bind="p1scoreLose"></span>
+                   LOSES: <span ng-bind="p1scoreWin"></span>
+                   TIE: <span ng-bind="p1scoreTie"></span><p>
         </aside>
 
         <footer>

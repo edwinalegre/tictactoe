@@ -68,3 +68,27 @@ if ( $scope.boxes[0].box == 'X' && $scope.boxes[4].box == 'X' && $scope.boxes[8]
 if ( $scope.boxes[2].box == 'X' && $scope.boxes[4].box == 'X' && $scope.boxes[6].box == 'X' ){
     $scope.score('X');
 };
+if ( $scope.boxes[0].box == 'O' && $scope.boxes[1].box == 'O' && $scope.boxes[2].box == 'O' ){
+    $scope.score('O');
+};
+if ( $scope.boxes[3].box == 'O' && $scope.boxes[4].box == 'O' && $scope.boxes[5].box == 'O' ){
+    $scope.score('O');
+};
+if ( $scope.boxes[6].box == 'O' && $scope.boxes[7].box == 'O' && $scope.boxes[8].box == 'O' ){
+    $scope.score('O');
+};
+if ( $scope.boxes[0].box == 'O' && $scope.boxes[3].box == 'O' && $scope.boxes[6].box == 'O' ){
+    $scope.score('O');
+};
+if ( $scope.boxes[1].box == 'O' && $scope.boxes[4].box == 'O' && $scope.boxes[7].box == 'O' ){
+    $scope.score('O');
+};
+if ( $scope.boxes[2].box == 'O' && $scope.boxes[5].box == 'O' && $scope.boxes[8].box == 'O' ){
+    $scope.score('O');
+};
+if ( $scope.boxes[0].box == 'O' && $scope.boxes[4].box == 'O' && $scope.boxes[8].box == 'O' ){
+    $scope.score('O');
+};
+if ( $scope.boxes[2].box == 'O' && $scope.boxes[4].box == 'O' && $scope.boxes[6].box == 'O' ){
+    $scope.score('O');
+};
