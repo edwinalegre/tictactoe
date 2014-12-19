@@ -1,5 +1,6 @@
 body {
 	color: #000;
+	background-image: url(../images/background.jpg);
 	background-size: cover;
 }
 
@@ -11,6 +12,7 @@ body {
 header, nav, aside, section, footer {
 	border: 5px double #CCC;
 	background-color: #FFF;
+	background-image: url(../images/background-interface.jpg);
 	background-size: cover;
 	margin: 5px;
 	box-sizing: border-box;
@@ -83,4 +85,3 @@ footer {
 	font-size: 20px;
 	color: #000;
 }
-
