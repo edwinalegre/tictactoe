@@ -9,12 +9,20 @@ $scope.startButton = 'Start';
 
 // Start and Restart game
 $scope.start = function(){
-    $scope.boxes = [
-            {box: ''},{box: ''},{box: ''},
-            {box: ''},{box: ''},{box: ''},
-            {box: ''},{box: ''},{box: ''}
-        ];
-};
+        game = '';
+        $scope.boxes = [
+                {box: ''},{box: ''},{box: ''},
+                {box: ''},{box: ''},{box: ''},
+                {box: ''},{box: ''},{box: ''}
+            ]; 
+        if(turn == 'X'){
+            turn = 'O';
+            $scope.status = 'Player O Starts';
+        }else{
+            turn = 'X';
+            $scope.status = 'Player X Starts';
+        };
+    };
 
 // Players choices
 $scope.onclick = function(){
