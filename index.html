@@ -22,8 +22,9 @@
         </nav>
 
         <section>
-            <div class="game-board" x-ng-repeat="list in tic.boxes">
-                <div class="theBox" x-ng-class="list.box" x-ng-bind="list.box" x-ng-repeat="box in list" data-ng-click="tic.onclick($parent.$index)"></div>
+            <div class="game-board" x-ng-repeat="box in tic.boxesList">
+                <div class="theBox" x-ng-bind="box" x-ng-model="box" data-ng-click="tic.onclick($index)">
+                </div>
             </div>
         </section>
 
