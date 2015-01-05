@@ -5,20 +5,47 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
         <script src="js/angular.min.js"></script>
 		<script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
     	<script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
         <script src="js/main.js"></script>
 		<script src="js/TicController.js"></script>
+        <script>
+
+            var name = prompt("What is your name?");
+            var team = prompt("Pick a team X or O").toUpperCase();
+
+        </script>
     </head>
     <body ng-app="ticApp">
         <div class="container" ng-controller="TicController as tic">
 
         <header>
-            <h1>TIC TAC TOE</h1>
+            <h1>{{ tic.setList.title }}</h1>
         </header>
 
-        <nav class="tic.status" x-ng-bind="tic.status">
+        <nav>
+            <div class="team1">
+                <h2>TEAM X: {{ tic.setTeam1.name1 }}</h2>
+                <ul>
+                   <li class="score">wins: <span ng-bind="tic.setList.p1scoreWin"></span></li>
+                   <li class="score">loses: <span ng-bind="tic.setList.p1scoreLose"></span></li>
+                   <li class="score">ties: <span ng-bind="tic.setList.p1scoreTie"></span></li>
+                </ul>
+            </div>
+            <div class="navCenter">
+                <button data-ng-click="tic.start()" ng-bind="tic.setList.startButton">Start</button><br />
+                <span class="status" x-ng-bind="tic.setList.status"></span>
+            </div>
+            <div class="team2">
+                <h2>TEAM O: {{ tic.setTeam2.name2 }}</h2>
+                <ul>
+                   <li class="score">wins: <span ng-bind="tic.setList.p1scoreLose"></span></li>
+                   <li class="score">loses: <span ng-bind="tic.setList.p1scoreWin"></span></li>
+                   <li class="score">ties: <span ng-bind="tic.setList.p1scoreTie"></span></li>
+                </ul>
+            </div>
         </nav>
 
         <section>
@@ -29,21 +56,19 @@
         </section>
 
         <aside>
-            <button data-ng-click="tic.start()" ng-bind="tic.startButton">Start</button>
+               <div class="chat" id="chat">
+                <div class="chat-header">Chat</div>
+                    <ul>
+                        <li ng-repeat="chat in tic.chatsList | limitTo: -20">
+                            <span ng-class="chat.chatTeam">{{ chat.chatName }}:</span> {{ chat.chatText }}
+                        </li>
+                        <li><a id="bottom"></a></li>
+                    </ul>
 
-                <p>WINS: <span ng-bind="tic.p1scoreWin"></span>
-                   LOSES: <span ng-bind="tic.p1scoreLose"></span>
-                   TIE: <span ng-bind="tic.p1scoreTie"></span>
-                </p>
-
-                <p>WINS: <span ng-bind="tic.p1scoreLose"></span>
-                   LOSES: <span ng-bind="tic.p1scoreWin"></span>
-                   TIE: <span ng-bind="tic.p1scoreTie"></span><p>
+                </div>
+                <textarea class="text-chat" type="text" ng-model="tic.text" placeholder="Send a message"></textarea>
+                <button class="btn-chat" ng-click="tic.addChat()">Chat</button>
         </aside>
-
-        <footer>
-            
-        </footer>
 
         </div>
     </body>
